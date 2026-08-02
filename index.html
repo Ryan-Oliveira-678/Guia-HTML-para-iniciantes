@@ -41,31 +41,43 @@
 
     <main>
         <section id="oqe">
+
             <h2>O que é o HTML</h2>
+
             <p>O HTML (HyperText Markup Language, ou Linguagem de Marcação de Hipertexto) é a espinha dorsal de virtualmente qualquer página na World Wide Web. É a linguagem fundamental usada para estruturar e dar significado ao conteúdo que você vê no seu navegador (textos, imagens, botões, formulários, vídeos).</p>
+
             <p>Para compreender exatamente o que o HTML faz, vale a pena desmembrar a própria sigla:</p>
+
             <ul>
                 <li>Hipertexto (HyperText): Refere-se a texto que contém links (os "hiperlinks") para outros textos ou recursos. É o conceito que permite navegar de uma página para outra com um simples clique, criando uma rede interconectada de informações em vez de um documento linear/estático.</li>
                 <li>Linguagem de Marcação (Markup Language): Significa que o HTML não é uma linguagem de programação (ele não possui lógica condicional como if/else, loops como for/while ou operações matemáticas complexas). Em vez disso, ele usa "marcas" (chamadas de tags) para anotar/envolver o texto puro e dizer ao navegador o que aquele texto representa (se é um título, um parágrafo, uma tabela, um campo de entrada, etc.).</li>
             </ul>
+
             <p>A construção do HTML baseia-se em componentes fundamentais: Tags, Elementos e Atributos<br> <strong>Tags e Elementos:</strong> <br> Um elemento HTML é a unidade individual que compõe a estrutura da página. Na maioria das vezes, ele é composto por: </p>
+
             <ol>
                 <li>Tag de abertura: Indica o início do elemento (ex: &lt;p&gt;).</li>
                 <li>Conteúdo: O texto ou outros elementos contidos nele.</li>
                 <li>Tag de fechamento: Indica o fim do elemento, marcada por uma barra (ex: &lt;/p&gt;).</li>
             </ol>
+
             <p>Exemplo : <code><pre><strong>&lt;p&gt;</strong>Este é o conteúdo do parágrafo.<strong>&lt;/p&gt;</strong></pre></code></p>
+
             <p>Resultado: <p><strong>Este é o conteúdo do parágrafo.</strong></p></p>
 
             <p><strong>Atributos:</strong> <br> Os atributos fornecem informações ou configurações adicionais sobre um elemento. Eles ficam sempre dentro da tag de abertura e geralmente vêm em pares de nome="valor".</p>
+
             <code><pre>&lt;a href="https://www.exemplo.com" target="_blank">Visitar site&lt;/a&gt;</pre></code>
+
             <ol>
                 <li>href: Atributo que define o destino do link.</li>
                 <li>target="_blank": Atributo que instrui o navegador a abrir o link em uma nova aba.</li>
             </ol>
 
             <h3>Estrutura</h3>
+
             <p>A estrutura HTML é o esqueleto de uma página web. O HTML (HyperText Markup Language, ou Linguagem de Marcação de Hipertexto) organiza os elementos que compõem um site — como textos, imagens, botões, links e vídeos — para que o navegador consiga entender e exibir tudo corretamente na tela.
+
                 <code><pre>
                     &lt;!DOCTYPE html&gt;
                     &lt;html lang="pt-BR"&gt;
@@ -80,6 +92,7 @@
                     &lt;/body&gt;
                     &lt;/html&gt;
                 </pre></code>
+
             <strong>&lt;!DOCTYPE html&gt;:</strong> Avisa ao navegador que o arquivo está usando a versão mais recente do HTML (HTML5) <br> <strong>&lt;html lang="pt-BR"&gt;:</strong> O elemento "pai" que abraça todo o documento. O atributo lang indica o idioma da página. <br> <strong>&lt;head&gt;:</strong> Contém informações sobre a página, como título, metadados e links para arquivos externos (CSS, JavaScript). <br> <strong>&lt;meta charset="UTF-8"&gt;:</strong> Define a codificação de caracteres, garantindo que acentos e símbolos sejam exibidos corretamente. <br> <strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;:</strong> Torna a página responsiva, ajustando-a a diferentes tamanhos de tela. <br> <strong>&lt;title&gt;Título da Página&lt;/title&gt;:</strong> Define o título que aparece na aba do navegador. <br> <strong>&lt;body&gt;:</strong> Contém todo o conteúdo visível da página, como textos, imagens e links. <br> <strong>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;:</strong> Um cabeçalho de nível 1, geralmente usado para títulos principais. <br> <strong>&lt;p&gt;Este é o meu primeiro parágrafo em HTML.&lt;/p&gt;:</strong> Um parágrafo de texto.
             </p>
 
@@ -96,109 +109,175 @@
             <p>Visualmente, para o usuário final, as duas páginas podem ser idênticas se estilizadas com CSS. No entanto, para computadores, robôs de busca e leitores de tela, a diferença é enorme.</p>
 
             <h3>Por que ele é tão importante?</h3>
+
             <ol>
-                <li>Para SEO (Otimização para Motores de Busca) <br> Os robôs de busca (como o Googlebot) usam a estrutura do seu HTML para entender a relevância de cada trecho do site:</li>
+                <li> <strong>Para SEO</strong> (Otimização para Motores de Busca) <br> Os robôs de busca (como o Googlebot) usam a estrutura do seu HTML para entender a relevância de cada trecho do site:</li> <br>
                 <ul>
                     <li type="disc">Entendimento de hierarquia: Quando o Google encontra um &lt;article&gt; dentro de um &lt;main&gt;, ele entende exatamente onde está o conteúdo de valor da página.</li>
                     <li type="disc">Destaque de cabeçalhos: Usar as tags de título (&lt;h1&gt; até &lt;h6&gt;) na ordem correta indica ao buscador quais temas são mais prioritários no seu texto.</li>
                     <li type="disc">Snippet enriquecido: Ajuda os buscadores a extrair resumos mais precisos para exibir nos resultados de pesquisa.</li>
-                    <li type="disc">Acessibilidade: A estrutura semântica facilita a navegação para usuários com deficiência, especialmente aqueles que usam leitores de tela.</li>
+                    <li type="disc">Acessibilidade: A estrutura semântica facilita a navegação para usuários com deficiência, especialmente aqueles que usam leitores de tela.</li> <br>
                 </ul>
+                <li> <Strong>Para Acessibilidade</Strong> (A11y) <br> 
+                <ul>
+                    <li type="disc">Navegação por atalhos: Um usuário de leitor de tela pode saltar direto para o menu (&lt;nav&gt;) ou para o conteúdo principal (&lt;main&gt;) sem precisar ouvir a leitura de todos os elementos anteriores.</li>
+                    <li type="disc">Previsibilidade: Elementos semânticos possuem "papéis" (roles) nativos. Por exemplo, uma tag &lt;button&gt; já avisa ao leitor de tela que aquele elemento é clicável e pode ser ativado via teclado, o que não acontece nativamente com uma &lt;div&gt; estilizada.</li>    
+                </ul> <br>
+                <li> <strong>Manutenção e Leitura do Código</strong> <br>
+                Para desenvolvedores, um código semântico é incomparavelmente mais limpo e fácil de manter. Qualquer pessoa que ler o código entende instantaneamente qual é a função de cada bloco.</li>
             </ol>
 
 
         <section id="historia">
+
             <h2>História</h2>
-            <p>O HTML foi criado em 1990 pelo físico britânico Tim Berners-Lee no laboratório CERN, com o objetivo de compartilhar documentos científicos entre pesquisadores. As principais fases da sua evolução incluem a primeira menção pública em 1991, a normatização pelo W3C nos anos 90, e a chegada moderna do HTML5.</p>
+
+            <p>A história do HTML nasce da necessidade de resolver um problema prático enfrentado por cientistas no final dos anos 1980: como compartilhar informações e pesquisas de forma simples entre computadores diferentes. Em 1989, o físico e cientista da computação britânico Tim Berners-Lee trabalhava no CERN (Organização Europeia para a Pesquisa Nuclear), na Suíça. Na época, milhares de pesquisadores do mundo todo usavam computadores e sistemas operacionais totalmente incompatíveis entre si. Se um cientista quisesse ler a pesquisa de outro, muitas vezes precisava aprender um sistema novo ou formatar os dados manualmente. Para resolver essa confusão, Berners-Lee escreveu a proposta inicial do que chamou de World Wide Web (WWW), unindo o conceito de hipertexto — textos contendo links que permitiam ao leitor saltar de um documento para outro com um simples clique — com a infraestrutura já existente da internet.</p>
+
+            <p>Em 1991, Berners-Lee publicou o primeiro documento público especificando o HTML (HyperText Markup Language), contendo apenas 18 tags básicas — das quais 11 permanecem em uso no HTML5 moderno, incluindo a tag de parágrafo &lt;p&gt;, os títulos de &lt;h1&gt; a &lt;h6&gt; e a revolucionária tag &lt;a&gt; para criar hiperlinks. Com o crescimento acelerado da rede, Berners-Lee fundou em 1994 o World Wide Web Consortium (W3C), uma organização com o objetivo de criar padrões universais e evitar que a web se dividisse em tecnologias proprietárias. Em 1995, o HTML 2.0 tornou-se o primeiro padrão oficial padronizado pela IETF. Mais tarde, nos anos 90, o surgimento da competição acirrada entre os navegadores Netscape e Internet Explorer (a chamada "guerra dos navegadores") fez com que as empresas tentassem criar suas próprias tags proprietárias não padronizadas, como a famosa tag &lt;blink&gt; para fazer o texto piscar.</p>
+
+            <p>A consolidação da linguagem veio em 1999 com o lançamento do HTML 4.01, que oficializou o suporte a formulários avançados, tabelas e a separação clara entre a estrutura do documento (HTML) e o seu visual (CSS). Após um período de estagnação nos anos 2000, em que a W3C tentou substituir o HTML pelo mais rígido XHTML, uma frente conjunta de desenvolvedores e grandes navegadores formou o WHATWG para criar uma evolução moderna da linguagem. Esse movimento culminou no desenvolvimento do HTML5, padronizado em 2014, trazendo suporte nativo para reprodução de áudio e vídeo, gráficos dinâmicos e tags semânticas avançadas.</p>
+
+            <p>Hoje, o sucesso global do HTML deve-se em grande parte à decisão histórica do CERN, que em 1993 liberou o código-fonte e os direitos da tecnologia da World Wide Web totalmente para o domínio público, sem a cobrança de royalties, permitindo que a linguagem se tornasse a espinha dorsal gratuita e acessível da internet que usamos todos os dias.</p>
             
         </section>
 
         <section id="funciona">
+
             <h2>Como Funciona o HTML</h2>
-            <p>O HTML funciona como o esqueleto de uma página na internet, usando tags (marcações) para organizar textos, imagens e links que o navegador lê e transforma em um site visual.</p>
+
+            <p></p>
+
         </section>
 
         <section id="difl">
+
             <h2>Diferença com outras linguagens</h2>
-            <p>O HTML é diferente de outras linguagens porque é uma linguagem de marcação (e não de programação), focada apenas em estruturar o conteúdo. Ele usa tags para definir textos e imagens, enquanto o CSS cuida da aparência e o JavaScript cria ações e lógica.</p>
+
+            <p></p>
+
         </section>
 
         <section id="hcj">
+
             <h2>Diferença entre HTML, CSS e JavaScript</h2>
+
             <p>A diferença entre HTML, CSS e JavaScript está em suas funções: o HTML cria a estrutura da página, o CSS define o visual e o JavaScript adiciona movimento e ações. Pense em uma casa: o HTML são as paredes e os cômodos, o CSS é a pintura e os móveis, e o JavaScript são as luzes que acendem sozinhas.<br>O que cada um fazHTML: <br> Organiza os textos, imagens, links e vídeos em blocos básicos. <br>CSS: Muda as cores, os tipos de letras, os tamanhos e o lugar de cada coisa na tela. <br>JavaScript: Faz animações, abre janelas quando você clica em botões e verifica dados que você digita. <br>Como eles trabalham juntosO navegador do seu computador lê os três ao mesmo tempo para mostrar o site pronto. <br>O site só funciona direito e fica bonito se os três amigos ajudarem uns aos outros.</p>
+
         </section>
 
         <section id="ide">
+
             <h2>IDEs</h2>
+
             <p>As melhores opções de programas para criar e editar arquivos HTML são o Visual Studio Code, o Sublime Text e o Notepad++. <br> Eles ajudam a escrever códigos mais rápido com recursos de cores e preenchimento automático. <br>Principais Editores de HTML <br>Visual Studio Code: O programa mais usado no mundo, gratuito, leve e com muitas extensões úteis. <br>Sublime Text: Um editor muito rápido, leve e simples, ótimo para quem está começando a aprender. <br>Notepad++: Um bloco de notas avançado e gratuito para computadores com Windows, ideal para edições rápidas de código.</p>
+
         </section>
 
         <section id="dom">
+
             <h2>DOM</h2>
+
             <p></p>
+
         </section>
 
         <section id="tags">
+
             <h2>Tags</h2>
+
             <p>&lt;li&gt;Elemento de lista&lt;/li&gt; <br> simbolos list-style-type: disc; <br>list-style-type: circle; <br>list-style-type: square;</p>
+
         </section>
 
         <section id="comentarios">
+
             <h2>Comentarios</h2>
+
             <p></p>
+
         </section>
 
         <section id="caracter">
+
             <h2>Caracteres Especiais</h2>
+
             <p></p>
+
         </section>
 
         <section id="emoji">
+
             <h2>Emojis</h2>
+
             <p></p>
+
         </section>
 
         <section id="img">
+
             <h2>Imagens</h2>
+
             <p></p>
+
         </section>
 
         <section id="audios">
+
             <h2>audios</h2>
+
             <p></p>
+
         </section>
 
         <section id="videos">
+
             <h2>videos</h2>
+
             <p></p>
+
         </section>
 
         <section id="links">
+
             <h2>links</h2>
+
             <p></p>
+
         </section>
 
         <section id="Recomendados">
+
             <h2>Cursos Recomendados</h2>
-        </details><details>
+
+        <details>
                 
-                <summary>abrir</summary> 
-                <ul>
-                    <li><a href="https://youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&si=soiQhI6bACh7crxe" target="_blank" rel="noopener noreferrer">Curso em Vídeo (Gustavo Guanabara)</a></li>
-                    <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>: Treinamento prático direto no navegador com projetos reais (com opção em português).</li>
-                    <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs (Mozilla)</a>: O guia de aprendizado oficial e referência definitiva da web.</li>
-                    <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a>: Tutoriais curtos e interativos, ótimos para consultas rápidas.</li>
-                </ul>
-            </details>
+            <summary>abrir</summary> 
+
+            <ul>
+                <li><a href="https://youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&si=soiQhI6bACh7crxe" target="_blank" rel="noopener noreferrer">Curso em Vídeo (Gustavo Guanabara)</a></li>
+                <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>: Treinamento prático direto no navegador com projetos reais (com opção em português).</li>
+                 <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs (Mozilla)</a>: O guia de aprendizado oficial e referência definitiva da web.</li>
+                <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a>: Tutoriais curtos e interativos, ótimos para consultas rápidas.</li>
+            </ul>
+
+        </details>
+
         </section>
 
     </main>
     <section id="contatos">
+
         <h2>Contatos</h2>
+
         <h3>Profissional</h3>
+
         <p>linkedin <a href="">💼</a>&lt;(clique aqui) <br> github <a href="">💻</a>&lt;(clique aqui) <br> </p>
+
         <h3>Pessoal</h3>
+
         <p>instagram</p>
+        
     </section>
 </body>
 </html>
