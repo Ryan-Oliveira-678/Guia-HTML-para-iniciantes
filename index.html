@@ -19,8 +19,7 @@
             <ul>
             <li><a href="#oqe">O que é o HTML</a>
             <li><a href="#historia">História</a> 
-            <li><a href="#funciona">Como Funciona o HTML</a> 
-            <li><a href="#difl">Diferença com outras linguagens</a> 
+            <li><a href="#funciona">Como Funciona o HTML</a>
             <li><a href="#hcj">Diferença entre HTML, CSS e JavaScript</a> 
             <li><a href="#ide">IDEs</a> 
             <li><a href="#dom">DOM</a> 
@@ -93,7 +92,23 @@
                     &lt;/html&gt;
                 </pre></code>
 
-            <strong>&lt;!DOCTYPE html&gt;:</strong> Avisa ao navegador que o arquivo está usando a versão mais recente do HTML (HTML5) <br> <strong>&lt;html lang="pt-BR"&gt;:</strong> O elemento "pai" que abraça todo o documento. O atributo lang indica o idioma da página. <br> <strong>&lt;head&gt;:</strong> Contém informações sobre a página, como título, metadados e links para arquivos externos (CSS, JavaScript). <br> <strong>&lt;meta charset="UTF-8"&gt;:</strong> Define a codificação de caracteres, garantindo que acentos e símbolos sejam exibidos corretamente. <br> <strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;:</strong> Torna a página responsiva, ajustando-a a diferentes tamanhos de tela. <br> <strong>&lt;title&gt;Título da Página&lt;/title&gt;:</strong> Define o título que aparece na aba do navegador. <br> <strong>&lt;body&gt;:</strong> Contém todo o conteúdo visível da página, como textos, imagens e links. <br> <strong>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;:</strong> Um cabeçalho de nível 1, geralmente usado para títulos principais. <br> <strong>&lt;p&gt;Este é o meu primeiro parágrafo em HTML.&lt;/p&gt;:</strong> Um parágrafo de texto.
+            <p><strong>&lt;!DOCTYPE html&gt;:</strong> Avisa ao navegador que o arquivo está usando a versão mais recente do HTML (HTML5)</p>
+
+            <p><strong>&lt;html lang="pt-BR"&gt;:</strong> O elemento "pai" que abraça todo o documento. O atributo lang indica o idioma da página. (neste caso português do Brasil)</p> 
+            
+            <p><strong>&lt;head&gt;:</strong> Contém informações sobre a página, como título, metadados e links para arquivos externos (CSS, JavaScript).</p>
+            
+            <p><strong>&lt;meta charset="UTF-8"&gt;:</strong> Define a codificação de caracteres, garantindo que acentos e símbolos sejam exibidos corretamente. </p>
+            
+            <p><strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;:</strong> Torna a página responsiva, ajustando-a a diferentes tamanhos de tela. </p>
+            
+            <p><strong>&lt;title&gt;Título da Página&lt;/title&gt;:</strong> Define o título que aparece na aba do navegador. </p>
+            
+            <p><strong>&lt;body&gt;:</strong> Contém todo o conteúdo visível da página, como textos, imagens e links. </p>
+            
+            <p><strong>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;:</strong> Um cabeçalho de nível 1, geralmente usado para títulos principais. </p>
+            
+            <p><strong>&lt;p&gt;Este é o meu primeiro parágrafo em HTML.&lt;/p&gt;:</strong> Um parágrafo de texto.
             </p>
 
             <h3>Semântica</h3>
@@ -146,15 +161,32 @@
 
             <h2>Como Funciona o HTML</h2>
 
-            <p></p>
+            <p>O navegador interpreta o HTML através de um processo estruturado que transforma o arquivo de texto puro em uma representação visual interativa na sua tela. Esse processo faz parte do que os motores de navegação chamam de Caminho de Renderização Crítico (Critical Rendering Path).</p>
 
-        </section>
+            <p>Diferente de linguagens de programação como Python ou JavaScript, o HTML não possui lógica, condicionais ou cálculos. Ele é uma linguagem de marcação: ele usa "etiquetas" (chamadas de tags) para sinalizar ao navegador como cada parte do texto, imagem ou elemento deve ser interpretada e exibida.</p>
 
-        <section id="difl">
+            <p>Quando o navegador baixa o arquivo HTML do servidor, ele segue quatro etapas principais para entender o código:</p>
+            <ol>
+                <li>Conversão de Bytes para Caracteres: O navegador lê os bytes crus que chegam pela rede (ex: 01001000...) e os converte em caracteres de texto com base na codificação da página (geralmente UTF-8).</li> <br>
+                <li>Tokenização: O texto é analisado para identificar "tokens" — que são os blocos de construção da linguagem, como tags de abertura (&lt;html&gt;), tags de fechamento (&lt;/html&gt;), nomes de atributos e conteúdos de texto.</li> <br>
+                <li>Lexing (Nodos): Os tokens identificados são convertidos em Objetos (Nodos) contendo suas respectivas propriedades e regras.</li> <br>
+                <li>Construção do DOM: Os Nodos são conectados em uma estrutura de árvore chamada DOM (Document Object Model). O DOM reflete as relações de parentesco do HTML (elementos pais, filhos e irmãos).</li> <br>
+            </ol>
 
-            <h2>Diferença com outras linguagens</h2>
+            <p>Enquanto o navegador lê o HTML e constrói o DOM linha por linha, ele encontra referências a outros arquivos:</p>
 
-            <p></p>
+            <ul>
+                <li>Arquivos CSS: O navegador baixa o CSS e constrói outra árvore paralela chamada CSSOM (CSS Object Model), que mapeia todos os estilos e regras visuais que serão aplicados aos elementos.</li> <br>
+                <li>Arquivos JavaScript: Por padrão, quando a leitura do HTML encontra uma tag &lt;script&gt;, a construção do DOM é pausada. O navegador baixa e executa o código JavaScript antes de continuar lendo o restante do HTML (a menos que sejam usados atributos como async ou defer).</li>
+            </ul>
+
+            <p>Com o DOM e o CSSOM prontos, o navegador executa as etapas finais para desenhar a página na tela:</p>
+
+            <ul>
+                <li>Árvore de Renderização (Render Tree): O navegador combina o DOM e o CSSOM em uma única árvore. Ela contém apenas os elementos que serão realmente visíveis na tela (elementos com display: none, por exemplo, são descartados aqui).</li> <br>
+                <li>Layout (Reflow): O navegador calcula a geometria exata da página — determinando a posição e o tamanho preciso de cada elemento na tela com base no tamanho da janela do usuário.</li> <br>
+                <li>Pintura (Rasterização/Painting): O navegador converte cada elemento da Render Tree em pixels reais na tela, desenhando textos, cores, bordas, sombras e imagens.</li> <br>
+            </ul>
 
         </section>
 
@@ -162,7 +194,15 @@
 
             <h2>Diferença entre HTML, CSS e JavaScript</h2>
 
-            <p>A diferença entre HTML, CSS e JavaScript está em suas funções: o HTML cria a estrutura da página, o CSS define o visual e o JavaScript adiciona movimento e ações. Pense em uma casa: o HTML são as paredes e os cômodos, o CSS é a pintura e os móveis, e o JavaScript são as luzes que acendem sozinhas.<br>O que cada um fazHTML: <br> Organiza os textos, imagens, links e vídeos em blocos básicos. <br>CSS: Muda as cores, os tipos de letras, os tamanhos e o lugar de cada coisa na tela. <br>JavaScript: Faz animações, abre janelas quando você clica em botões e verifica dados que você digita. <br>Como eles trabalham juntosO navegador do seu computador lê os três ao mesmo tempo para mostrar o site pronto. <br>O site só funciona direito e fica bonito se os três amigos ajudarem uns aos outros.</p>
+            <p>A diferença entre HTML, CSS e JavaScript está em suas funções: o HTML cria a estrutura da página, o CSS define o visual e o JavaScript adiciona movimento e ações. Pense em uma casa: o HTML são as paredes e os cômodos, o CSS é a pintura e os móveis, e o JavaScript são as luzes que acendem sozinhas. </p>
+            
+            <p>O que cada um faz: <br> HTML: Organiza os textos, imagens, links e vídeos em blocos básicos. </p>
+
+            <p>CSS: Muda as cores, os tipos de letras, os tamanhos e o lugar de cada coisa na tela. </p> 
+            
+            <p>JavaScript: Faz animações, abre janelas quando você clica em botões e verifica dados que você digita.</p> 
+            <p>Como eles trabalham juntos: O navegador do seu computador lê os três ao mesmo tempo para mostrar o site pronto. </p>
+            <p>O site só funciona direito e fica bonito se os três amigos ajudarem uns aos outros.</p>
 
         </section>
 
@@ -170,7 +210,13 @@
 
             <h2>IDEs</h2>
 
-            <p>As melhores opções de programas para criar e editar arquivos HTML são o Visual Studio Code, o Sublime Text e o Notepad++. <br> Eles ajudam a escrever códigos mais rápido com recursos de cores e preenchimento automático. <br>Principais Editores de HTML <br>Visual Studio Code: O programa mais usado no mundo, gratuito, leve e com muitas extensões úteis. <br>Sublime Text: Um editor muito rápido, leve e simples, ótimo para quem está começando a aprender. <br>Notepad++: Um bloco de notas avançado e gratuito para computadores com Windows, ideal para edições rápidas de código.</p>
+            <p>As melhores opções de programas para criar e editar arquivos HTML são <strong> o Visual Studio Code</strong>, o <strong>Sublime Text</strong> e o <strong>Notepad++.</strong> <br> Eles ajudam a escrever códigos mais rápido com recursos de cores e preenchimento automático. <br> Principais Editores de HTML:</p>
+            
+            <p><strong>Visual Studio Code:</strong> O programa mais usado no mundo, gratuito, leve e com muitas extensões úteis. </p>
+
+            <p><strong>Sublime Text:</strong> Um editor muito rápido, leve e simples, ótimo para quem está começando a aprender.</p> 
+            
+            <p><strong>Notepad++:</strong> Um bloco de notas avançado e gratuito para computadores com Windows, ideal para edições rápidas de código.</p>
 
         </section>
 
@@ -178,15 +224,56 @@
 
             <h2>DOM</h2>
 
-            <p></p>
+            <p>O DOM (Document Object Model, ou Modelo de Objeto do Documento) é uma interface de programação que representa uma página HTML como uma árvore de objetos.</p>
 
-        </section>
+            <p>Quando o navegador carrega um arquivo HTML, ele converte todo aquele texto em uma estrutura viva na memória do computador. É essa estrutura que permite que linguagens de programação, como o JavaScript, consigam ler, alterar, adicionar ou remover elementos da página em tempo real.</p>
 
-        <section id="tags">
+            <h3>A Estrutura em Árvore</h3> <p>O DOM organiza o código em uma hierarquia de nós (nodes), parecida com uma árvore genealógica de pais, filhos e irmãos. <br>Considere este HTML simples:</p>
 
-            <h2>Tags</h2>
+            <code><pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;Minha Página&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Olá!&lt;/h1&gt;
+                        &lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </pre></code>
 
-            <p>&lt;li&gt;Elemento de lista&lt;/li&gt; <br> simbolos list-style-type: disc; <br>list-style-type: circle; <br>list-style-type: square;</p>
+            <p>No DOM, esse código é representado visualmente assim:</p>
+            
+            <ul>
+                <li>Document (A raiz de tudo)</li>
+                <ul>
+                    <li type="circle">&lt;html&gt; (Elemento pai)</li>
+                    <ul>
+                        <li type="circle">&lt;head&gt; (Filho de &lt;html&gt;)</li>
+                        <ul>
+                            <li type="circle">&lt;title&gt; (Filho de &lt;head&gt;)</li>
+                            <ul>
+                                <li type="disc">"Minha Página" (Nó de texto)</li>
+                                <li type="disc">&lt;body&gt; (Filho de &lt;html&gt; e irmão de &lt;head&gt;)</li>
+                            </ul>
+                            <li type="circle">&lt;h1&gt; (Filho de &lt;body&gt;)</li>
+                        </ul>
+                        <li type="circle">"Olá!" (Nó de texto)</li>
+                    </ul>
+                    <li type="circle">&lt;p&gt; (Filho de &lt;body&gt; e irmão de &lt;h1&gt;)</li>
+                </ul>
+                <li>"Este é um parágrafo." (Nó de texto)</li>
+            </ul>
+
+            <p>O HTML puro é apenas um arquivo de texto estático. Sem o DOM, as páginas da internet seriam como documentos em PDF — imóveis e sem interatividade. <br> Com o DOM, o JavaScript ganha um "controle remoto" para manipular a página sem precisar recarregá-la:</p>
+
+            <ul>
+                <li>Alterar conteúdo: Mudar um texto na tela quando o usuário clica em um botão.</li> <br>
+                <li>Modificar estilos: Alterar a cor de um elemento ou esconder um menu ao rolar a página.</li> <br>
+                <li>Manipular estrutura: Adicionar novas fotos em um feed de redes sociais dinamicamente.</li> <br>
+                <li>Reagir a eventos: Detectar quando o usuário digita em um campo de formulário, clica com o mouse ou passa o ponteiro sobre uma imagem.</li>
+            </ul>
 
         </section>
 
@@ -243,6 +330,148 @@
             <h2>links</h2>
 
             <p></p>
+
+        </section>
+        
+        <section id="tags">
+
+            <h2>Tags</h2>
+
+            <p>Agora chegou o momento em que eu apresento as tags e para o que elas servem</p>
+
+            <p>&lt;html&gt;</p>
+            <p>&lt;base&gt;</p>
+            <p>&lt;head&gt;</p>
+            <p>&lt;link&gt;</p>
+            <p>&lt;meta&gt;</p>
+            <p>&lt;style&gt;</p>
+            <p>&lt;title&gt;</p>
+            <p>&lt;body&gt;</p>
+            <p>&lt;address&gt;</p>
+            <p>&lt;article&gt;</p>
+            <p>&lt;aside&gt;</p>
+            <p>&lt;footer&gt;</p>
+            <p>&lt;header&gt;</p>
+            <p>&lt;h1&gt; ao &lt;h6&gt;</p>
+            <p>&lt;main&gt;</p>
+            <p>&lt;nav&gt;</p>
+            <p>&lt;section&gt;</p>
+            <p>&lt;blockquote&gt;</p>
+            <p>&lt;dd&gt;</p>
+            <p>&lt;div&gt;</p>
+            <p>&lt;dl&gt;</p>
+            <p>&lt;dt&gt;</p>
+            <p>&lt;figcaption&gt;</p>
+            <p>&lt;figure&gt;</p>
+            <p>&lt;hr&gt;</p>
+            <p>&lt;li&gt;</p>
+            <p>&lt;menu&gt;</p>
+            <p>&lt;ol&gt;</p>
+            <p>&lt;p&gt;</p>
+            <p>&lt;pre&gt;</p>
+            <p>&lt;ul&gt;</p>
+            <p>&lt;a&gt;</p>
+            <p>&lt;abbr&gt;</p>
+            <p>&lt;b&gt;</p>
+            <p>&lt;bdi&gt;</p>
+            <p>&lt;bdo&gt;</p>
+            <p>&lt;br&gt;</p>
+            <p>&lt;cite&gt;</p>
+            <p>&lt;code&gt;</p>
+            <p>&lt;data&gt;</p>
+            <p>&lt;dfn&gt;</p>
+            <p>&lt;em&gt;</p>
+            <p>&lt;i&gt;</p>
+            <p>&lt;kbd&gt;</p>
+            <p>&lt;mark&gt;</p>
+            <p>&lt;q&gt;</p>
+            <p>&lt;rp&gt;</p>
+            <p>&lt;rt&gt;</p>
+            <p>&lt;ruby&gt;</p>
+            <p>&lt;s&gt;</p>
+            <p>&lt;samp&gt;</p>
+            <p>&lt;small&gt;</p>
+            <p>&lt;span&gt;</p>
+            <p>&lt;strong&gt;</p>
+            <p>&lt;sub&gt;</p>
+            <p>&lt;sup&gt;</p>
+            <p>&lt;time&gt;</p>
+            <p>&lt;u&gt;</p>
+            <p>&lt;var&gt;</p>
+            <p>&lt;wbr&gt;</p>
+            <p>&lt;area&gt;</p>
+            <p>&lt;audio&gt;</p>
+            <p>&lt;img&gt;</p>
+            <p>&lt;map&gt;</p>
+            <p>&lt;track&gt;</p>
+            <p>&lt;video&gt;</p>
+            <p>&lt;embed&gt;</p>
+            <p>&lt;iframe&gt;</p>
+            <p>&lt;object&gt;</p>
+            <p>&lt;pictures&gt;</p>
+            <p>&lt;portal&gt;</p>
+            <p>&lt;source&gt;</p>
+            <p>&lt;svg&gt;</p>
+            <p>&lt;math&gt;</p>
+            <p>&lt;canvas&gt;</p>
+            <p>&lt;noscript&gt;</p>
+            <p>&lt;script&gt;</p>
+            <p>&lt;del&gt;</p>
+            <p>&lt;ins&gt;</p>
+            <p>&lt;caption&gt;</p>
+            <p>&lt;col&gt;</p>
+            <p>&lt;colgroup&gt;</p>
+            <p>&lt;table&gt;</p>
+            <p>&lt;tbody&gt;</p>
+            <p>&lt;td&gt;</p>
+            <p>&lt;tfoot&gt;</p>
+            <p>&lt;th&gt;</p>
+            <p>&lt;thead&gt;</p>
+            <p>&lt;tr&gt;</p>
+            <p>&lt;button&gt;</p>
+            <p>&lt;dayalist&gt;</p>
+            <p>&lt;fieldset&gt;</p>
+            <p>&lt;form&gt;</p>
+            <p>&lt;input&gt;</p>
+            <p>&lt;label&gt;</p>
+            <p>&lt;legend&gt;</p>
+            <p>&lt;meter&gt;</p>
+            <p>&lt;optgroup&gt;</p>
+            <p>&lt;option&gt;</p>
+            <p>&lt;output&gt;</p>
+            <p>&lt;progress&gt;</p>
+            <p>&lt;select&gt;</p>
+            <p>&lt;textarea&gt;</p>
+            <p>&lt;details&gt;</p>
+            <p>&lt;dialog&gt;</p>
+            <p>&lt;summary&gt;</p>
+            <p>&lt;slot&gt;</p>
+            <p>&lt;template&gt;</p>
+            <p>&lt;acronym&gt;</p>
+            <p>&lt;applet&gt;</p>
+            <p>&lt;bgsound&gt;</p>
+            <p>&lt;big&gt;</p>
+            <p>&lt;center&gt;</p>
+            <p>&lt;content&gt;</p>
+            <p>&lt;dir&gt;</p>
+            <p>&lt;font&gt;</p>
+            <p>&lt;frame&gt;</p>
+            <p>&lt;frameset&gt;</p>
+            <p>&lt;image&gt;</p>
+            <p>&lt;marquee&gt;</p>
+            <p>&lt;menuitem&gt;</p>
+            <p>&lt;nobr&gt;</p>
+            <p>&lt;noembed&gt;</p>
+            <p>&lt;noframes&gt;</p>
+            <p>&lt;param&gt;</p>
+            <p>&lt;splaintext&gt;</p>
+            <p>&lt;rb&gt;</p>
+            <p>&lt;rtc&gt;</p>
+            <p>&lt;shadow&gt;</p>
+            <p>&lt;spacer&gt;</p>
+            <p>&lt;strike&gt;</p>
+            <p>&lt;tt&gt;</p>
+            <p>&lt;xmp&gt;</p>
 
         </section>
 
