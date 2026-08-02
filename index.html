@@ -12,97 +12,177 @@
     <header>
         <h1>Guia HTML para iniciantes</h1>
         <p>Aprenda as principais tags do HTML de forma simples, rápida e intuitiva.</p>
+        <p>Este guia foi criado 100% em HTML para que você possa ver o poder que o HTML tem por si só </p>
         
         <nav>
-            <a href="#">Início</a>
-            <a href="#">Estrutura HTML</a>
-            <a href="#">Principais Tags</a>
-            <a href="#">Contato</a>
+            <h2>Sumário</h2>
+            <ul>
+            <li><a href="#oqe">O que é o HTML</a>
+            <li><a href="#historia">História</a> 
+            <li><a href="#funciona">Como Funciona o HTML</a> 
+            <li><a href="#difl">Diferença com outras linguagens</a> 
+            <li><a href="#hcj">Diferença entre HTML, CSS e JavaScript</a> 
+            <li><a href="#ide">IDEs</a> 
+            <li><a href="#dom">DOM</a> 
+            <li><a href="#tags">Tags</a> 
+            <li><a href="#comentarios">Comentarios</a> 
+            <li><a href="#caracter">Caracteres Especiais</a> 
+            <li><a href="#emojis">Emojis</a> 
+            <li><a href="#img">Imagens</a> 
+            <li><a href="#audios">Audios</a> 
+            <li><a href="#videos">Videos</a> 
+            <li><a href="#links">Links</a> 
+            <li><a href="#Recomendados">Cursos Recomendados</a>
+            <li><a href="#contatos">Contatos</a>
+            </ul>
         </nav>
         <hr>
     </header>
 
     <main>
-        <section>
-            <h2>O que é Html?</h2>
-            <p>
-                HTML é a sigla para <strong>HyperText Markup Language</strong> (Linguagem de Marcação de Hipertexto).
+        <section id="oqe">
+            <h2>O que é o HTML</h2>
+            <p>O HTML (HyperText Markup Language, ou Linguagem de Marcação de Hipertexto) é a espinha dorsal de virtualmente qualquer página na World Wide Web. É a linguagem fundamental usada para estruturar e dar significado ao conteúdo que você vê no seu navegador (textos, imagens, botões, formulários, vídeos).</p>
+            <p>Para compreender exatamente o que o HTML faz, vale a pena desmembrar a própria sigla:</p>
+            <ul>
+                <li>Hipertexto (HyperText): Refere-se a texto que contém links (os "hiperlinks") para outros textos ou recursos. É o conceito que permite navegar de uma página para outra com um simples clique, criando uma rede interconectada de informações em vez de um documento linear/estático.</li>
+                <li>Linguagem de Marcação (Markup Language): Significa que o HTML não é uma linguagem de programação (ele não possui lógica condicional como if/else, loops como for/while ou operações matemáticas complexas). Em vez disso, ele usa "marcas" (chamadas de tags) para anotar/envolver o texto puro e dizer ao navegador o que aquele texto representa (se é um título, um parágrafo, uma tabela, um campo de entrada, etc.).</li>
+            </ul>
+            <p>A construção do HTML baseia-se em componentes fundamentais: Tags, Elementos e Atributos<br> <strong>Tags e Elementos:</strong> <br> Um elemento HTML é a unidade individual que compõe a estrutura da página. Na maioria das vezes, ele é composto por: </p>
+            <ol>
+                <li>Tag de abertura: Indica o início do elemento (ex: &lt;p&gt;).</li>
+                <li>Conteúdo: O texto ou outros elementos contidos nele.</li>
+                <li>Tag de fechamento: Indica o fim do elemento, marcada por uma barra (ex: &lt;/p&gt;).</li>
+            </ol>
+            <p>Exemplo : <code><pre><strong>&lt;p&gt;</strong>Este é o conteúdo do parágrafo.<strong>&lt;/p&gt;</strong></pre></code></p>
+            <p>Resultado: <p><strong>Este é o conteúdo do parágrafo.</strong></p></p>
+
+            <p><strong>Atributos:</strong> <br> Os atributos fornecem informações ou configurações adicionais sobre um elemento. Eles ficam sempre dentro da tag de abertura e geralmente vêm em pares de nome="valor".</p>
+            <code><pre>&lt;a href="https://www.exemplo.com" target="_blank">Visitar site&lt;/a&gt;</pre></code>
+            <ol>
+                <li>href: Atributo que define o destino do link.</li>
+                <li>target="_blank": Atributo que instrui o navegador a abrir o link em uma nova aba.</li>
+            </ol>
+
+            <h3>Estrutura</h3>
+            <p>A estrutura HTML é o esqueleto de uma página web. O HTML (HyperText Markup Language, ou Linguagem de Marcação de Hipertexto) organiza os elementos que compõem um site — como textos, imagens, botões, links e vídeos — para que o navegador consiga entender e exibir tudo corretamente na tela.
+                <code><pre>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="pt-BR"&gt;
+                    &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                    &lt;title>Título da Página&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;h1>Olá, mundo!&lt;/h1&gt;
+                    &lt;p>Este é o meu primeiro parágrafo em HTML.&lt;/p&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </pre></code>
+            <strong>&lt;!DOCTYPE html&gt;:</strong> Avisa ao navegador que o arquivo está usando a versão mais recente do HTML (HTML5) <br> <strong>&lt;html lang="pt-BR"&gt;:</strong> O elemento "pai" que abraça todo o documento. O atributo lang indica o idioma da página. <br> <strong>&lt;head&gt;:</strong> Contém informações sobre a página, como título, metadados e links para arquivos externos (CSS, JavaScript). <br> <strong>&lt;meta charset="UTF-8"&gt;:</strong> Define a codificação de caracteres, garantindo que acentos e símbolos sejam exibidos corretamente. <br> <strong>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;:</strong> Torna a página responsiva, ajustando-a a diferentes tamanhos de tela. <br> <strong>&lt;title&gt;Título da Página&lt;/title&gt;:</strong> Define o título que aparece na aba do navegador. <br> <strong>&lt;body&gt;:</strong> Contém todo o conteúdo visível da página, como textos, imagens e links. <br> <strong>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;:</strong> Um cabeçalho de nível 1, geralmente usado para títulos principais. <br> <strong>&lt;p&gt;Este é o meu primeiro parágrafo em HTML.&lt;/p&gt;:</strong> Um parágrafo de texto.
             </p>
-            <p> Ele é o elemento básico e a espinha dorsal de qualquer página na internet.
-                Importante: O HTML não é uma <strong>linguagem de programação</strong>, pois não possui lógica condicional (como if/else) ou loops. Ele é uma <strong>linguagem de marcação</strong>, o que significa que sua função é definir a estrutura e o significado do conteúdo da página.
-            </p>
-        </section>
-        <section>
-                <h2>Como surgiu o HTML?</h2>
-                <p>O HTML foi criado em 1989 pelo físico e cientista da computação britânico <strong> Tim Berners-Lee</strong> enquanto ele trabalhava no <strong>CERN</strong> <em>(Organização Europeia para a Pesquisa Nuclear)</em>, na Suíça. </p> 
-                <p>Ele precisava de uma solução para resolver um problema prático da época: permitir que pesquisadores e cientistas de diferentes partes do mundo pudessem compartilhar, organizar e acessar documentos acadêmicos com facilidade.</p>
-                <p>Inspirado por uma linguagem de marcação mais antiga e complexa chamada <strong>SGML</strong>, Berners-Lee simplificou seus conceitos e desenvolveu a primeira versão do HTML com apenas 18 tags básicas, lançando oficialmente a linguagem em <strong>1991</strong> junto com as bases da <strong>World Wide Web</strong> <em>(a famosa WWW)</em>, o protocolo <strong>HTTP</strong>  e o primeiro navegador de internet da história.</p>
-        </section>
 
-        <section>
-            <h2>Por que aprender HTML?</h2>
-            <p>Aprender HTML é essencial porque ele é a base fundamental de toda a Web, sendo a linguagem responsável por estruturar a informação de absolutamente qualquer site existente na internet. </p>
-            <p>Por possuir uma sintaxe simples, intuitiva e acessível, ele serve como a porta de entrada ideal para o universo da tecnologia, permitindo que iniciantes compreendam rapidamente a lógica de organização digital sem a necessidade de softwares complexos.</p>
-            <p>Além disso, o domínio do HTML é indispensável para criar conteúdos acessíveis a pessoas com deficiência e para aplicar boas práticas de <em>SEO</em>, o que garante que as páginas sejam facilmente encontradas e bem posicionadas em buscadores como o <em>Google</em>.</p> 
-            <p>Por fim, esse conhecimento oferece um enorme diferencial profissional não apenas para <em>desenvolvedores</em>, mas também para <em>designers</em>, profissionais de <em>marketing</em> e criadores de conteúdo que precisam construir <em>landing pages</em>, <em>e-mails marketing</em> e gerenciar plataformas como o <em>WordPress</em>.</p>
-        </section>
+            <h3>Semântica</h3>
 
-        <section>
-            <h2>O que iremos aprender neste guia?</h2>
-            <p>Neste guia completo, você vai embarcar em uma jornada pelo universo do HTML, começando pelas suas origens e descobrindo a fascinante história de como ele foi criado por Tim Berners-Lee para revolucionar a comunicação mundial.</p> 
-            <p>Vamos explorar o papel fundamental que essa linguagem desempenhou na construção da internet como a conhecemos hoje e entender por que ela continua sendo o pilar de qualquer projeto digital.</p>
-            <p>Além disso, você vai dominar na prática os conceitos essenciais da linguagem: desde a estrutura básica das tags, passando pela importância do HTML semântico para SEO e acessibilidade, até a organização de conteúdos modernos.</p>
-            <p>Por fim, você verá todo o potencial prático do HTML e descobrirá exatamente o que é possível construir utilizando essa ferramenta indispensável.</p>
-        </section>
+            <p>HTML Semântico é a prática de usar tags HTML que possuem significado real sobre o tipo de conteúdo que elas envolvem, em vez de usar tags genéricas como (&lt;div&gt; ou &lt;span&gt;) para tudo.</p>
 
-        <section>
+            <p>Antigamente, era muito comum estruturar um site usando apenas divs para criar as "caixas" da página: <br> Semântica fraca (genérico):
+            &lt;div class="header"&gt;, &lt;div class="menu"&gt;, &lt;div class="artigo"&gt;, &lt;div class="rodape"&gt;</p>
 
-        <h2>Primeiros exemplos de código</h2>
+            <p>HTML Semântico (significativo):
+            &lt;header&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;footer&gt;</p>
 
-        <h3>Exemplo</h3>
+            <p>Visualmente, para o usuário final, as duas páginas podem ser idênticas se estilizadas com CSS. No entanto, para computadores, robôs de busca e leitores de tela, a diferença é enorme.</p>
 
-        <p>Veja como criar um título em HTML:</p>
-
-        <pre><code>
-            &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
-            &lt;p&gt;Este é o meu primeiro parágrafo em HTML!&lt;/p&gt;
-
-        </code></pre>
-        <p><strong>Resultado:</strong></p>
-
-        <h1>Olá, Mundo!</h1>
-        <p>Este é o meu primeiro parágrafo em HTML!</p>
-
-        <hr>
-        </section>
-
-        <section>
-            <details>
-                <summary>O que é uma tag?</summary> 
-                <p>É uma instrução de código entre parênteses angulares (ex: &lt;p&gt;, &lt;h1&gt;) usada para indicar ao navegador como estruturar ou exibir um elemento na página.</p>
-            </details>
-            <details>
-                <summary>HTML é uma linguagem de programação?</summary> 
-                <p>Não. O HTML é uma linguagem de marcação (HyperText Markup Language). Ele serve para estruturar conteúdos, não para executar lógicas, cálculos ou condições.</p>
-            </details>
-            <details>
-                <summary>Qual a diferença entre HTML e CSS?</summary> 
+            <h3>Por que ele é tão importante?</h3>
+            <ol>
+                <li>Para SEO (Otimização para Motores de Busca) <br> Os robôs de busca (como o Googlebot) usam a estrutura do seu HTML para entender a relevância de cada trecho do site:</li>
                 <ul>
-                    <li>HTML: Constrói o esqueleto e a estrutura do site (textos, imagens, botões).</li>
-                    <li>CSS: Define o estilo visual (cores, fontes, espaçamentos, layout e responsividade).</li>
+                    <li type="disc">Entendimento de hierarquia: Quando o Google encontra um &lt;article&gt; dentro de um &lt;main&gt;, ele entende exatamente onde está o conteúdo de valor da página.</li>
+                    <li type="disc">Destaque de cabeçalhos: Usar as tags de título (&lt;h1&gt; até &lt;h6&gt;) na ordem correta indica ao buscador quais temas são mais prioritários no seu texto.</li>
+                    <li type="disc">Snippet enriquecido: Ajuda os buscadores a extrair resumos mais precisos para exibir nos resultados de pesquisa.</li>
+                    <li type="disc">Acessibilidade: A estrutura semântica facilita a navegação para usuários com deficiência, especialmente aqueles que usam leitores de tela.</li>
                 </ul>
-            </details>
-            <details>
-                <summary>Preciso aprender HTML antes do JavaScript?</summary> 
-                <p>Sim. O JavaScript é usado para dar interatividade aos elementos criados no HTML. Entender a estrutura da página é essencial para saber o que você está manipulando.</p>
-            </details><details>
-                <summary>Quanto tempo leva para aprender HTML?</summary> 
-                <ul>
-                    <li>O básico: De 1 a 3 dias (ou cerca de 10 a 15 horas de estudo).</li>
-                    <li>Domínio prático (com HTML5 semântico): De 1 a 2 semanas praticando junto com CSS.</li>
-                </ul>
-            </details><details>
-                <summary>Cursos recomendados</summary> 
+            </ol>
+
+
+        <section id="historia">
+            <h2>História</h2>
+            <p>O HTML foi criado em 1990 pelo físico britânico Tim Berners-Lee no laboratório CERN, com o objetivo de compartilhar documentos científicos entre pesquisadores. As principais fases da sua evolução incluem a primeira menção pública em 1991, a normatização pelo W3C nos anos 90, e a chegada moderna do HTML5.</p>
+            
+        </section>
+
+        <section id="funciona">
+            <h2>Como Funciona o HTML</h2>
+            <p>O HTML funciona como o esqueleto de uma página na internet, usando tags (marcações) para organizar textos, imagens e links que o navegador lê e transforma em um site visual.</p>
+        </section>
+
+        <section id="difl">
+            <h2>Diferença com outras linguagens</h2>
+            <p>O HTML é diferente de outras linguagens porque é uma linguagem de marcação (e não de programação), focada apenas em estruturar o conteúdo. Ele usa tags para definir textos e imagens, enquanto o CSS cuida da aparência e o JavaScript cria ações e lógica.</p>
+        </section>
+
+        <section id="hcj">
+            <h2>Diferença entre HTML, CSS e JavaScript</h2>
+            <p>A diferença entre HTML, CSS e JavaScript está em suas funções: o HTML cria a estrutura da página, o CSS define o visual e o JavaScript adiciona movimento e ações. Pense em uma casa: o HTML são as paredes e os cômodos, o CSS é a pintura e os móveis, e o JavaScript são as luzes que acendem sozinhas.<br>O que cada um fazHTML: <br> Organiza os textos, imagens, links e vídeos em blocos básicos. <br>CSS: Muda as cores, os tipos de letras, os tamanhos e o lugar de cada coisa na tela. <br>JavaScript: Faz animações, abre janelas quando você clica em botões e verifica dados que você digita. <br>Como eles trabalham juntosO navegador do seu computador lê os três ao mesmo tempo para mostrar o site pronto. <br>O site só funciona direito e fica bonito se os três amigos ajudarem uns aos outros.</p>
+        </section>
+
+        <section id="ide">
+            <h2>IDEs</h2>
+            <p>As melhores opções de programas para criar e editar arquivos HTML são o Visual Studio Code, o Sublime Text e o Notepad++. <br> Eles ajudam a escrever códigos mais rápido com recursos de cores e preenchimento automático. <br>Principais Editores de HTML <br>Visual Studio Code: O programa mais usado no mundo, gratuito, leve e com muitas extensões úteis. <br>Sublime Text: Um editor muito rápido, leve e simples, ótimo para quem está começando a aprender. <br>Notepad++: Um bloco de notas avançado e gratuito para computadores com Windows, ideal para edições rápidas de código.</p>
+        </section>
+
+        <section id="dom">
+            <h2>DOM</h2>
+            <p></p>
+        </section>
+
+        <section id="tags">
+            <h2>Tags</h2>
+            <p>&lt;li&gt;Elemento de lista&lt;/li&gt; <br> simbolos list-style-type: disc; <br>list-style-type: circle; <br>list-style-type: square;</p>
+        </section>
+
+        <section id="comentarios">
+            <h2>Comentarios</h2>
+            <p></p>
+        </section>
+
+        <section id="caracter">
+            <h2>Caracteres Especiais</h2>
+            <p></p>
+        </section>
+
+        <section id="emoji">
+            <h2>Emojis</h2>
+            <p></p>
+        </section>
+
+        <section id="img">
+            <h2>Imagens</h2>
+            <p></p>
+        </section>
+
+        <section id="audios">
+            <h2>audios</h2>
+            <p></p>
+        </section>
+
+        <section id="videos">
+            <h2>videos</h2>
+            <p></p>
+        </section>
+
+        <section id="links">
+            <h2>links</h2>
+            <p></p>
+        </section>
+
+        <section id="Recomendados">
+            <h2>Cursos Recomendados</h2>
+        </details><details>
+                
+                <summary>abrir</summary> 
                 <ul>
                     <li><a href="https://youtube.com/playlist?list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n&si=soiQhI6bACh7crxe" target="_blank" rel="noopener noreferrer">Curso em Vídeo (Gustavo Guanabara)</a></li>
                     <li><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp</a>: Treinamento prático direto no navegador com projetos reais (com opção em português).</li>
@@ -110,65 +190,15 @@
                     <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a>: Tutoriais curtos e interativos, ótimos para consultas rápidas.</li>
                 </ul>
             </details>
-        </section> 
-        <section>
-            <h2>Guia Completo das Tags HTML</h2>
-
-            <h3>A tag &lt;html&gt;</h3>
-            <pre><code>
-            &lt;html&gt;&lt;/html&gt;
-            </code></pre>
-            <details><p>A tag &lt;html&gt; é a raiz de todo documento HTML. <br> ela serve para definir o início e o fim do documento.</p> 
-            <p>Quando usar?</p></details>
-
-            <h4>Resultado</h4>
-            
-            
-
-            <h3>A tag &lt;head&gt;</h3>
-            <pre><code>
-            &lt;head&gt;&lt;/head&gt;
-            </code></pre>
-            <details><p>A tag &lt;head&gt; contém informações sobre o documento, como título, metadados e links para arquivos externos (CSS, JavaScript).</p></details>
-
-            <h3>A tag &lt;body&gt;</h3>
-            <pre><code>
-            &lt;body&gt;&lt;/body&gt;
-            </code></pre>
-            <details><p>A tag &lt;body&gt; contém todo o conteúdo visível da página, como textos, imagens, vídeos e links.</p></details>
-
-            <h3>A tag &lt;header&gt;</h3>
-            <pre><code>
-            &lt;header&gt;&lt;/header&gt;
-            </code></pre>
-            <details><p>A tag &lt;header&gt; representa a seção de cabeçalho de um documento ou seção, geralmente contendo títulos, logotipos e navegação.</p></details>
-
-            <h3>A tag &lt;main&gt;</h3>
-            <pre><code>
-            &lt;main&gt;&lt;/main&gt;
-            </code></pre>
-            <details><p>A tag &lt;main&gt; representa o conteúdo principal do documento, sendo única e central para a página.</p></details>
-
-            <h3>A tag &lt;footer&gt;</h3>
-            <pre><code>
-            &lt;footer&gt;&lt;/footer&gt;
-            </code></pre>
-            <details><p>A tag &lt;footer&gt; representa a seção de rodapé de um documento ou seção, geralmente contendo informações de copyright, links para páginas relacionadas e outros elementos de navegação.</p></details>
-
-            <h3>A tag &lt;section&gt;</h3>
-            <pre><code>
-            &lt;section&gt;&lt;/section&gt;
-            </code></pre>
-            <details><p>A tag &lt;section&gt; representa uma seção genérica de conteúdo, agrupando elementos relacionados dentro de um documento.</p></details>
-
-            <h3>A tag &lt;article&gt;</h3>
-            <pre><code>
-            &lt;article&gt;&lt;/article&gt;
-            </code></pre>
-            <details><p>A tag &lt;article&gt; representa um conteúdo independente e autocontido, como um post de blog, uma notícia ou um comentário.</p></details>
-
         </section>
+
     </main>
-    
+    <section id="contatos">
+        <h2>Contatos</h2>
+        <h3>Profissional</h3>
+        <p>linkedin <a href="">💼</a>&lt;(clique aqui) <br> github <a href="">💻</a>&lt;(clique aqui) <br> </p>
+        <h3>Pessoal</h3>
+        <p>instagram</p>
+    </section>
 </body>
 </html>
