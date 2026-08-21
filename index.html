@@ -509,105 +509,226 @@
             </ol>
             <p>Elas indicam ao navegador e ao Google a importância relativa do texto. O &lt;h1&gt; é o mais importante e o &lt;h6&gt; é o menos importante. Por padrão, os navegadores exibem o &lt;h1&gt; bem grande e o &lt;h6&gt; bem pequeno, mas o tamanho visual deve ser controlado pelo CSS, não pelas tags em si.</p>
             <img src="img/h1-h6.png" alt="estrutura h1-h6">
-            <p>As tags <h1> a <h6> não possuem atributos específicos exclusivos, mas utilizam os globais:</p>
+            <p>As tags &lt;h1&gt; a &lt;h6&gt; não possuem atributos específicos exclusivos, mas utilizam os globais:</p>
             <ul>
                 <li>class: Essencial para aplicar os estilos e padronizar o tamanho dos títulos com CSS.</li>
                 <li>id: Permite criar links internos na página (ex: &lt;a href="#secao1"&gt; leva direto ao &lt;h2 id="secao1"&gt;).</li>
             </ul>
         </section>
-        <section>
+        <section id="main">
             <h3>&lt;main&gt;</h3>
-            <p></p>
-            <p></p>
-            <img src="" alt="">
-            <p></p>
+            <p>Pense na tag &lt;main&gt; como o prato principal de um refeição ou a matéria de capa de um jornal. Você pode ter a entrada (cabeçalho), o acompanhamento (barra lateral) e a sobremesa/conta (rodapé), mas o &lt;main&gt; é exatamente o motivo pelo qual você sentou para comer.</p>
+            <p>Ela agrupa todo o conteúdo exclusivo e principal do documento. Tudo o que fica dentro do &lt;main&gt; deve ser diretamente relacionado ao tema central da página e não deve se repetir em outros lugares do site (como menus de navegação, rodapés, informações de direitos autorais ou logos). Deve existir apenas um &lt;main&gt; visível por página.</p>
+            <img src="img/main.png" alt="estrutura main">
+            <p>A tag &lt;main&gt; não possui atributos específicos e exclusivos. Ela aceita os atributos globais do HTML:</p>
             <ul>
-                <li></li>
+                <li>class: Usada para aplicar o layout principal no CSS (como definir a largura máxima da página, centralizar o conteúdo na tela ou ajustar o espaçamento).</li>
+                <li>id: Permite criar links do tipo "Pular para o conteúdo principal" (&lt;a href="#conteudo-principal"&gt;), o que melhora bastante a acessibilidade para quem navega usando apenas o teclado.</li>
+                <li>role: Pode receber role="main" para garantir compatibilidade com navegadores ou leitores de tela mais antigos.</li>
             </ul>
         </section>
-        <section>
+        <section id="nav">
             <h3>&lt;nav&gt;</h3>
-            <p></p>
-            <p></p>
-            <img src="" alt="">
-            <p></p>
+            <p>Pense na tag &lt;nav&gt; como a placa de sinalização em um shopping ou o índice nas primeiras páginas de um livro. Ela avisa claramente ao visitante: "Aqui estão os caminhos para você se locomover para os principais pontos deste lugar"</p>
+            <p>Ela indica ao navegador, ao Google e aos leitores de tela que o bloco de links ali dentro serve para a navegação principal do site. Nem todos os links da página precisam de um &lt;nav&gt; (links soltos dentro de um parágrafo não precisam), mas ele deve ser usado nos menus principais do cabeçalho, menus do rodapé, índices de artigos ou páginas de paginação (1, 2, 3...).</p>
+            <img src="img/nav.png" alt="estrutura nav">
+            <p>A tag &lt;nav&gt; não possui atributos específicos exclusivos. Ela utiliza os atributos globais do HTML:</p>
             <ul>
-                <li></li>
+                <li>class: Usada para aplicar formatações CSS no menu (como transformar a lista vertical em uma barra horizontal, alinhar os botões ou criar um menu hambúrguer para celular).</li>
+                <li>aria-label: Usado para diferenciar múltiplos menus na mesma página (ex: &lt;nav aria-label="Navegação principal"&gt; no topo e &lt;nav aria-label="Navegação do rodapé"&gt; no final da página), ajudando leitores de tela a identificarem a função de cada um.</li>
+                <li>id: Identificador único para a seção de navegação, muito utilizado para aplicar estilos ou controlar a abertura e fechamento do menu via JavaScript.</li>
             </ul>
         </section>
-        <section>
+        <section id="section">
             <h3>&lt;section&gt;</h3>
-            <p></p>
-            <p></p>
-            <img src="" alt="">
-            <p></p>
+            <p>Pense na tag &lt;section&gt; como os capítulos de um livro ou as seções de um supermercado (Seção de Hortifrúti, Seção de Padaria, Seção de Limpeza). Toda a loja está sob o mesmo teto, mas os produtos são agrupados por assunto para que ninguém se perca.</p>
+            <p>Ela serve para agrupar conteúdos que possuem o mesmo tema dentro de um documento. Diferente de uma simples caixa neutra (como a &lt;div&gt;), a &lt;section&gt; tem valor semântico: ela avisa ao navegador e ao Google que aquele bloco é uma parte relevante da página. Uma boa prática de acessibilidade e organização é colocar um título (&lt;h2&gt; a &lt;h6&gt;) no início de cada &lt;section&gt;.</p>
+            <img src="img/" alt="estrutura section">
+            <p>A tag &lt;section&gt; não possui atributos específicos exclusivos. Ela faz uso dos atributos globais do HTML:</p>
             <ul>
-                <li></li>
+                <li>class: Usada para aplicar estilos CSS comuns a todas as seções ou estilos específicos para um bloco (como aplicar fundo zebrado ou alterar espaçamentos internos).</li>
+                <li>id: Fundamental para navegação por links internos (âncoras). Se você criar um link &lt;a href="#resultados"&gt;, a página rolará suavemente até a &lt;section id="resultados"&gt;.</li>
+                <li>aria-labelledby: Conecta a &lt;section&gt; diretamente ao ID do título que a nomeia, melhorando a leitura para softwares leitores de tela usados por pessoas com deficiência visual.</li>
             </ul>
         </section>
-        <section>
+        <section id="blockquote">
             <h3>&lt;blockquote&gt;</h3>
-            <p></p>
-            <p></p>
-            <img src="" alt="">
-            <p></p>
+            <p>Pense na tag &lt;blockquote&gt; como a caixa de citação em destaque no meio de uma matéria de revista ou a frase colocada entre aspas grandes em um slide de apresentação. Ela serve para dar peso e destaque visual a algo dito por outra pessoa ou extraído de outra fonte.</p>
+            <p>Ela indica ao navegador, a leitores de tela e ao Google que aquele bloco de texto é uma citação longa vinda de uma fonte externa. Por padrão, os navegadores exibem o conteúdo dentro de &lt;blockquote&gt; com uma margem recuada nas laterais, dando o aspecto visual de bloco destacado em relação ao texto comum.</p>
+            <img src="img/blockquote.png" alt="estrutura blockquote">
             <ul>
-                <li></li>
+                <li>cite: Especifica a URL/endereço da fonte original de onde a citação foi retirada. Essa informação não aparece escrita diretamente na tela para o usuário, mas serve para robôs de busca e ferramentas de acessibilidade confirmarem a origem da citação.</li>
+                <li>class / id: Atributos globais usados para estilizar o bloco no CSS (como adicionar uma barra vertical na esquerda, mudar a cor de fundo ou aplicar aspas decorativas).</li>
             </ul>
         </section>
         <section>
             <h3>&lt;dd&gt;</h3>
-            <p></p>
-            <p></p>
-            <img src="" alt="">
-            <p></p>
+            <p>Pense em um dicionário ou em um glossário de termos. Você olha para a palavra em negrito (o termo) e, logo abaixo dela, encontra a definição detalhada explicando o que aquela palavra significa. A tag &lt;dd&gt; é exatamente esse texto explicativo que acompanha o termo.</p>
+            <p>Na prática, &lt;dd&gt; significa Description Details (Detalhes da Descrição) e serve para fornecer a definição ou o valor correspondente a um termo. Ela sempre trabalha em equipe dentro de uma lista de descrições (&lt;dl&gt;), vindo logo após a tag de termo (&lt;dt&gt;). Os navegadores costumam dar um pequeno recuo automático à esquerda para destacar visualmente a explicação.</p>
+            <img src="img/dd.jpeg" alt="estrutura dd">
+            <p>A tag &lt;dd&gt; não possui atributos obrigatórios ou exclusivos, mas aceita os atributos globais padrão do HTML:</p>
             <ul>
-                <li></li>
+                <li>class e id: Úteis se você quiser estilizar uma definição específica com CSS ou manipulá-la via JavaScript.</li>
             </ul>
         </section>
         <section>
             <h3>&lt;div&gt;</h3>
+            <p>Pense em uma caixa de papelão vazia ou em uma gaveta organizadora. Por si só, a caixa não tem uma função específica — ela não é um livro nem um sapato —, mas ela serve para agrupar e organizar vários objetos juntos para que você possa transportá-los ou arrumá-los facilmente. A tag &lt;div&gt; é exatamente essa caixa coringa no HTML.</p>
+            <p>Na prática, &lt;div&gt; significa Division (Divisão) e serve como um contêiner genérico para agrupar outros elementos HTML. Ela não tem nenhum significado semântico por si só (ou seja, não diz ao navegador o que é o conteúdo lá dentro), sendo usada principalmente para aplicar estilos com CSS ou estruturar blocos para o JavaScript manipular.</p>
+            <img src="img/div.jpeg" alt="estrutura div">
+            <p>A tag &lt;div&gt; não possui atributos exclusivos, mas como é um elemento puramente estrutural, ela depende fortemente dos atributos globais:</p>
+            <ul>
+                <li>class e id: Os mais importantes para a &lt;div&gt;. Eles servem para dar um "nome" à caixa, permitindo que o CSS pinte o fundo, mude bordas ou crie grades (layouts), e que o JavaScript encontre esse bloco facilmente.</li>
+            </ul>
+            <p>Dica de ouro: Como a &lt;div&gt; não tem significado semântico (ao contrário de &lt;main&gt;, &lt;nav&gt; ou &lt;section&gt;), evite usá-la para tudo. Sempre dê preferência a tags que explicam o que o conteúdo é. Use a &lt;div&gt; apenas quando nenhum outro elemento semântico se encaixar bem.</p>
+        </section>
+        <section>
+            <p>&lt;dl&gt;</p>
+            <p>Pense em um cardápio de restaurante onde o nome do prato vem em destaque e, logo abaixo, vem a lista dos ingredientes que o compõm, ou em um dicionário completo. A tag &lt;dl&gt; é a estrutura geral da página do dicionário ou do cardápio — a grande moldura que agrupa todos os pares de termos e descrições.</p>
+            <p>Na prática, &lt;dl&gt; significa Description List (Lista de Descrição) e serve para criar uma lista onde cada item consiste em um termo acompanhado da sua respectiva descrição. Ela funciona como o elemento "pai" que guarda obrigatoriamente as tags de termo (&lt;dt&gt;) e as tags de descrição (&lt;dd&gt;) que vimos agorinha pouco.</p>
+            <img src="img/dl.jpeg" alt="estrutura dl">
+            <p>A tag &lt;dl&gt; não possui atributos obrigatórios ou exclusivos, mas aceita os atributos globais padrão do HTML:</p>
+            <ul>
+                <li>class e id: Extremamente úteis para estilizar a lista inteira via CSS (por exemplo, para colocar uma linha divisória entre os itens ou alinhar os termos lado a lado com as descrições usando tecnologias modernas de layout).</li>
+            </ul>
+        </section>
+        <section>
+            <p>&lt;dt&gt;</p>
+            <p>Pense nas palavras em destaque no dicionário ou nos rótulos dos campos em um formulário de cadastro (como "Nome:", "E-mail:", "Senha:"). A tag &lt;dt&gt; é exatamente o rótulo ou o termo principal que fica esperando a sua explicação ou valor correspondente.</p>
             <p></p>
-            <p></p>
-            <img src="" alt="">
+            <img src="img/dt.jpeg" alt="estrutura dt">
             <p></p>
             <ul>
                 <li></li>
             </ul>
         </section>
-        <section>
-            <p>&lt;dl&gt;</p>
+
+
+
+        <!--terminar depois tenho que baixar e adicoionar as imagens na pasta-->
+
+
+
+        <section id="figcaption">
+            <h3>&lt;figcaption&gt;</h3>
+            <p>Pense na tag &lt;figcaption&gt; como a legenda impressa logo abaixo de uma foto em um livro didático ou o rótulo de uma obra em um museu. A obra ou imagem traz o visual, mas a legenda dá o contexto: diz quem tirou a foto,</p>
+            <p>Ela fornece uma legenda visual e semântica para o conteúdo que está dentro da tag &lt;figure&gt; (como imagens, ilustrações, gráficos ou trechos de código). Ela conecta o texto diretamente à imagem para que leitores de tela e robôs de busca entendam que aquela frase específica pertence àquela imagem. Ela deve ser colocada sempre como primeira ou última filha dentro de uma tag &lt;figure&gt;.</p>
+            <img src="" alt="">
+            <p>A tag &lt;figcaption&gt; não possui atributos específicos exclusivos. Ela utiliza os atributos globais do HTML:</p>
+            <ul>
+                <li>class: Essencial para estilizar a legenda no CSS (como diminuir o tamanho da fonte, mudar a cor do texto para cinza ou centralizar o texto abaixo da imagem).</li>
+                <li>id: Permite identificar aquela legenda caso você queira fazer referência a ela em outra parte do texto ou via JavaScript.</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;dt&gt;</p>
+        <section id="figure">
+            <h3>&lt;figure&gt;</h3>
+            <p>Pense na tag &lt;figure&gt; como a moldura de um quadro em uma galeria ou a caixa destacada com uma figura em um livro didático. Ela agrupa a imagem, o gráfico ou a ilustração junto com a sua legenda, mantendo tudo unido como uma unidade completa.</p>
+            <p>Ela serve para encapsular conteúdos de mídia autônomos que ilustram ou complementam o texto principal. É usada para agrupar imagens (<img>), gráficos, diagramas, ilustrações, trechos de código ou tabelas. Se você mover esse bloco &lt;figure&gt; para o final da página ou para um anexo, o texto principal continua fazendo sentido por si só.</p>
+            <img src="" alt="">
+            <p>A tag &lt;figure&gt; não possui atributos específicos exclusivos. Ela faz uso dos atributos globais do HTML:</p>
+            <ul>
+                <li>class: Muito usada para definir bordas, alinhamentos (centralizado, à esquerda, à direita), fundos e margens do bloco no CSS.</li>
+                <li>id: Permite criar links diretos que levam até aquela imagem ou figura específica no texto (ex: &lt;a href="#figura1"&gt;Ver Figura 1&lt;/a&gt;).</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;figcaption&gt;</p>
+        <section id="hr">
+            <h3>&lt;hr&gt;</h3>
+            <p>Pense na tag &lt;hr&gt; como o fim de um capítulo em um romance com três asteriscos ()* no meio da página, ou como a linha horizontal que separa duas seções em um formulário impresso. Ela indica uma mudança de assunto sem precisar mudar de página.</p>
+            <p>Ela representa uma quebra temática no nível de parágrafo. Antigamente usada apenas para desenhar uma linha cinza, no HTML5 moderno ela tem função semântica: avisar a leitores de tela e ao Google que houve uma alteração no tópico ou no fluxo do conteúdo. É uma tag auto-closing (não precisa de </hr>).</p>
+            <img src="" alt="">
+            <p>No HTML5, todos os atributos visuais antigos da tag &lt;hr&gt; (como align, color, noshade, size e width) foram descontinuados. A aparência deve ser controlada exclusivamente via CSS. Atualmente, ela utiliza apenas os atributos globais:</p>
+            <ul>
+                <li>class: Usada para criar estilos personalizados no CSS (linhas pontilhadas, degradês, espessuras diferentes).</li>
+                <li>id: Permite identificar uma separação específica ou manipular sua visibilidade via JavaScript.</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;figure&gt;</p>
+        <section id="li">
+            <h3>&lt;li&gt;</h3>
+            <p>Pense na tag &lt;li&gt; (List Item) como cada linha numerada de uma lista de compras ou cada marcador (bullet) em uma receita. A lista inteira é a folha de papel, mas o &lt;li&gt; é a maçã, o leite ou o pão anotados nela.</p>
+            <p>Ela define um item pertencente a uma lista. A tag &lt;li&gt; obrigatoriamente precisa estar dentro de um elemento pai que organize a lista, como uma lista não ordenada (&lt;ul&gt;), uma lista ordenada (&lt;ol&gt;) ou uma lista de menu (&lt;menu&gt;).</p>
+            <img src="" alt="">
+            <ul>
+                <li>value (apenas quando usada dentro de &lt;ol&gt;): Define manualmente o número de início daquele item específico na sequência numerada (ex: &lt;li value="10"&gt; fará o número desse item ser 10, e o próximo 11).</li>
+                <li>class / id: Atributos globais para estilizar itens específicos com CSS (como colocar um ícone personalizado no lugar do marcador padrão ou aplicar bordas).</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;hr&gt;</p>
+        <section id="menu">
+            <h3>&lt;menu&gt;</h3>
+            <p>Pense na tag &lt;menu&gt; como o menu de opções de um caixa eletrônico ou o menu suspenso (menu de contexto) que aparece ao clicar com o botão direito do mouse em uma pasta do computador. Ela agrupa uma série de ações e ferramentas disponíveis para o usuário executar.</p>
+            <p>Ela funciona de forma praticamente idêntica à tag &lt;ul&gt; (lista não ordenada), sendo preenchida por itens &lt;li&gt;. No entanto, enquanto a &lt;ul&gt; é usada para listas de conteúdos ou navegação entre páginas, o &lt;menu&gt; é semanticamente destinado a agrupar comandos e botões interativos de uma aplicação (como barras de ferramentas, ações de formulário ou menus operacionais).</p>
+            <img src="" alt="">
+            <p>No HTML moderno, os antigos atributos visuais ou de criação de menu de contexto (como type="toolbar" ou label) foram descontinuados. Hoje o &lt;menu&gt; aceita os atributos globais do HTML:</p>
+            <ul>
+                <li>class: Essencial para estilizar a barra de ferramentas ou menu de botões via CSS (removendo marcadores de lista e organizando os botões lado a lado).</li>
+                <li>id: Usado para identificar o bloco de comandos e manipulá-lo via JavaScript.</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;li&gt;</p>
+        <section id="ol">
+            <h3>&lt;ol&gt;</h3>
+            <p>Pense na tag &lt;ol&gt; (Ordered List) como um passo a passo de uma receita de bolo, um ranking de classificação de um campeonato ou um tutorial de instalação. A ordem dos itens faz toda a diferença: o passo 1 precisa vir antes do passo 2.</p>
+            <p>Ela define uma lista cujos itens possuem uma ordem lógica ou cronológica. Por padrão, o navegador exibe os itens internos (<li>) numerados automaticamente (1, 2, 3...). Se você adicionar, remover ou reordenar um item no código, o navegador renumera toda a lista sozinho.</p>
+            <img src="" alt="">
+            <p>A tag &lt;ol&gt; possui atributos específicos muito úteis para controlar a numeração:</p>
+            <ul>
+                <li>type: Define o tipo do marcador numérico/alfabético:</li>
+                <li>
+                    <ul>
+                        <li>1 (padrão): Números (1, 2, 3...)</li>
+                        <li>a: Letras minúsculas (a, b, c...)</li>
+                        <li>A: Letras maiúsculas (A, B, C...)</li>
+                        <li>i: Números romanos em minúsculo (i, ii, iii...)</li>
+                        <li>I: Números romanos em maiúsculo (I, II, III...)</li>
+                    </ul>
+                </li>
+                <li>start: Define por qual número ou letra a lista deve começar (ex: &lt;ol start="5"&gt; começa a contar a partir do número 5).</li>
+                <li>reversed: Um atributo booleano (sem valor) que faz a contagem ser regressiva (ex: 3, 2, 1).</li>
+                <li>class / id: Atributos globais para estilizar as margens, cores ou fontes dos números via CSS.</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;menu&gt;</p>
+        <section id="p">
+            <h3>&lt;p&gt;</h3>
+            <p>Pense na tag &lt;p&gt; como os parágrafos de um livro, artigo de jornal ou redação. Sempre que você conclui uma ideia e dá um "Enter" para começar um novo bloco de texto, você está criando um novo parágrafo.</p>
+            <p>Ela agrupa um bloco de texto corrido. Por padrão, os navegadores adicionam automaticamente um pequeno espaçamento (margem) antes e depois de cada tag &lt;p&gt;, separando visualmente as ideias e tornando a leitura mais confortável. É a tag mais utilizada para exibir textos declarativos, explicações e descrições na Web.</p>
+            <img src="" alt="">
+            <p>No HTML moderno, os antigos atributos visuais da tag &lt;p&gt; (como align="center") foram descontinuados. A aparência deve ser controlada via CSS. Ela utiliza apenas os atributos globais:</p>
+            <ul>
+                <li>class: Usada para aplicar estilos de texto via CSS (como alterar tamanho da fonte, cor, alinhamento ou espaçamento entre linhas).</li>
+                <li>id: Identificador único para referenciar um parágrafo específico via CSS ou alterar seu texto dinamicamente com JavaScript.</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;ol&gt;</p>
+        <section id="pre">
+            <h3>&lt;pre&gt;</h3>
+            <p>Pense na tag &lt;pre&gt; (Preformatted Text) como uma página de máquina de escrever ou uma folha de papel quadriculado. Tudo o que você digita nela — cada espaço duplo, cada quebra de linha e cada tabulação — é preservado exatamente do jeito que foi digitado.</p>
+            <p>Por padrão, os navegadores ignoram múltiplos espaços e quebras de linha no código HTML comum. A tag &lt;pre&gt; desativa esse comportamento: ela mantém todos os espaços em branco e quebras de linha exatamente como estão no seu código-fonte. Por padrão, ela exibe o texto usando uma fonte monoespaçada (onde todas as letras têm a mesma largura, como Courier ou Consolas), sendo perfeita para exibir trechos de código, arte em ASCII ou logs do sistema.</p>
+            <img src="" alt="">
+            <p>No HTML moderno, atributos antigos como cols e width foram descontinuados. A tag &lt;pre&gt; utiliza os atributos globais do HTML:</p>
+            <ul>
+                <li>class: Muito usada para aplicar estilização de sintaxe e cor de fundo com bibliotecas CSS (como Prism.js ou Highlight.js) ao exibir códigos.</li>
+                <li>id: Identificador único para referenciar ou atualizar o bloco de texto pré-formatado via JavaScript (por exemplo, ao exibir logs em tempo real).</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;p&gt;</p>
+        <section id="ul">
+            <h3>&lt;ul&gt;</h3>
+            <p>Pense na tag &lt;ul&gt; (Unordered List) como uma lista de compras do mercado ou uma lista de ingredientes de uma receita. A ordem em que você compra o leite ou o pão não importa: o essencial é que todos os itens estejam agrupados ali na mesma lista.</p>
+            <p>Ela define uma lista onde a ordem dos itens não possui prioridade cronológica ou numérica. Por padrão, os navegadores exibem cada item filho (<li>) com uma pequena bolinha preta (bullet point) na frente. É uma das tags mais versáteis do HTML, sendo a estrutura padrão para criar listas de tópicos, menus de navegação, galerias de cards ou listas de links.</p>
+            <img src="" alt="">
+            <p>No HTML moderno, o antigo atributo visual type (que mudava a bolinha para quadrado ou círculo no HTML) foi descontinuado. A personalização do marcador deve ser feita exclusivamente via CSS (usando list-style-type ou list-style: none). Atualmente, ela utiliza os atributos globais do HTML:</p>
+            <ul>
+                <li>class: Essencial para aplicar estilos CSS (como remover as bolinhas padrões, transformar os itens em botões lado a lado ou ajustar os alinhamentos).</li>
+                <li>id: Identificador único para a lista, muito utilizado para referenciar menus ou manipulá-los dinamicamente via JavaScript.</li>
+            </ul>
         </section>
-        <section>
-            <p>&lt;pre&gt;</p>
-        </section>
-        <section>
-            <p>&lt;ul&gt;</p>
-        </section>
+
+
+
+
+        <!-- concluir até aqui ainda hoje-->
+
+
+
+
+
+
         <section>
             <p>&lt;a&gt;</p>
         </section>
