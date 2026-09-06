@@ -406,25 +406,149 @@
 
         <section id="audios">
 
-            <h2>audios</h2>
+            <h2>Trabalhando com Áudio no HTML5</h2>
 
-            <p></p>
+            <p>Antes do surgimento do HTML5, reproduzir um arquivo de som em uma página web era uma tarefa complexa que exigia a instalação de plugins externos de terceiros, pesados e frequentemente inseguros, como o Adobe Flash. <br> Com o HTML5, a web ganhou o elemento nativo &lt;audio&gt;, permitindo que navegadores executem arquivos de áudio diretamente de forma leve e nativa.</p>
+            
+            <h3>A Sintaxe Básica do &lt;audio&gt;</h3>
 
+            <p>A tag &lt;audio&gt; utiliza o atributo src para apontar para o arquivo de som e necessita de uma tag de fechamento &lt;/audio&gt;. Entre a abertura e o fechamento, você pode adicionar um texto simples que servirá de aviso para navegadores muito antigos que não suportam esse recurso.</p>
+        
+
+        <code><pre>
+            &lt;audio src="musica.mp3" controls&gt;
+                Seu navegador não suporta a reprodução de áudio nativo.
+            &lt;/audio&gt;
+        </pre></code>
+
+        <h3>Atributos Essenciais para Controle</h3>
+
+        <p>Você pode personalizar o comportamento do player de áudio adicionando os seguintes atributos nativos diretamente na tag de abertura:</p>
+
+        <ul>
+            <li>controls: Exibe a barra de controle padrão do navegador (contendo botão de Play/Pause, controle de volume, barra de progresso e seletor de faixa de tempo). Sem esse atributo, o player de áudio fica completamente invisível na página.</li>
+            <li>autoplay: Inicia a reprodução do som automaticamente assim que a página é carregada. (Nota didática: a maioria dos navegadores modernos bloqueia o autoplay de sons para evitar experiências incômodas para o usuário, permitindo o autoplay apenas se o elemento estiver mutado).</li>
+            <li>muted: Inicia o áudio no modo silencioso (mudo).</li>
+            <li>loop: Faz com que o áudio reinicie continuamente do início toda vez que a reprodução terminar.</li>
+        </ul>
+
+        <h3>Compatibilidade de Formatos com &lt;source&gt;</h3>
+
+        <p>Dispositivos e navegadores diferentes suportam formatos e codecs de áudio diferentes (como MP3, OGG ou WAV). Para garantir que o som toque em qualquer aparelho, a melhor prática é omitir o atributo src da tag &lt;audio&gt; e usar elementos internos chamados &lt;source&gt;. <br> O &lt;source&gt; é um elemento vazio (não possui tag de fechamento) que serve para listar os diferentes caminhos e formatos de arquivo. O navegador lerá a lista de cima para baixo e tocará o primeiro formato compatível que encontrar:</p>
+
+        <code><pre>
+            &lt;audio controls&gt;
+                &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+                &lt;source src="audio.ogg" type="audio/ogg"&gt;
+                Seu navegador não suporta a reprodução deste áudio.
+            &lt;/audio&gt;
+        </pre></code>
         </section>
 
         <section id="videos">
 
-            <h2>videos</h2>
+            <h2>Trabalhando com Vídeo no HTML5</h2>
 
-            <p></p>
+            <p>De forma equivalente ao áudio, o elemento &lt;video&gt; surgiu no HTML5 como um substituto semântico para tags genéricas legadas (como &lt;object&gt; ou &lt;embed&gt;), tornando a reprodução de filmes e mídias visuais um recurso nativo do navegador.</p>
+
+            <h3>A Sintaxe do &lt;video&gt; com Múltiplos Formatos</h3>
+                <p>Seguindo a mesma lógica de compatibilidade, estruturamos o elemento &lt;video&gt; utilizando múltiplos arquivos &lt;source&gt; para garantir compatibilidade entre diferentes navegadores:</p>
+                <code><pre>
+                    &lt;video controls&gt;
+                        &lt;source src="video.mp4" type="video/mp4"&gt;
+                        &lt;source src="video.webm" type="video/webm"&gt;
+                        Seu navegador não suporta a reprodução deste vídeo.
+                    &lt;/video&gt;
+                </pre></code>
+            
+            <p>Além dos atributos comuns que compartilha com o áudio (controls, autoplay, muted, loop), o elemento de vídeo possui dois atributos específicos muito úteis:</p>
+
+            <ul>
+                <li>width e height: Definem as dimensões físicas da tela do player de vídeo.</li>
+                <li>poster: Recebe o caminho de uma imagem que funcionará como a "capa" do vídeo antes de o usuário clicar no botão de reproduzir.</li>
+            </ul>
+
+            <h3>Acessibilidade, Legendas e Transcrições: O elemento &lt;track&gt;</h3>
+
+            <p>Uma das principais diretrizes de acessibilidade na web é garantir que conteúdos multimídia ofereçam legendas e alternativas textuais sincronizadas para usuários com deficiência auditiva ou visual. <br> No HTML, fazemos isso adicionando o elemento &lt;track&gt; como um nó filho de &lt;video&gt; ou de &lt;audio&gt;:</p>
+
+            <ul>
+                <li>O &lt;track&gt; carrega um arquivo de texto temporizado estruturado no formato WebVTT (com extensão .vtt).</li>
+                <li>Seus atributos fundamentais são:</li>
+                <ul>
+                    <li>src: O caminho para o arquivo .vtt de legendas.</li>
+                    <li>kind: Especifica a finalidade da faixa (como subtitles para tradução de diálogos, captions para descrição de sons de fundo voltada à acessibilidade, ou descriptions para audiodescrição visual).</li>
+                    <li>srclang: O código de idioma das legendas (ex: pt-BR).</li>
+                    <li>label: O título legível que aparecerá no menu do player para o usuário selecionar (ex: Português).</li>
+                </ul>
+            </ul>
+            <p>Exemplo de vídeo acessível:</p>
+            <code><pre>
+                &lt;video controls width="640"&gt;
+                    &lt;source src="aula-html.mp4" type="video/mp4"&gt;
+                    &lt;track src="legenda-portugues.vtt" kind="subtitles" srclang="pt-BR" label="Português" default&gt;
+                &lt;/video&gt;
+            </pre></code>
 
         </section>
 
         <section id="links">
 
-            <h2>links</h2>
+            <h2>Criando Hiperlinks (Links) no HTML</h2>
 
-            <p></p>
+            <p>A palavra "Hipertexto" no nome do HTML refere-se exatamente à capacidade de conectar uma página web a outra através de links. Sem os links, a internet seria apenas um monte de arquivos de texto isolados.</p>
+
+            <h3>A Tag de Âncora: &lt;a&gt;</h3>
+
+            <p>Para criar um link em HTML, utilizamos o elemento &lt;a&gt; (âncora). Ele é um elemento que precisa de fechamento e envolve o texto ou imagem que o usuário clicará para ser redirecionado. <br> O atributo mais importante da tag &lt;a&gt; é o href (Hypertext Reference), que indica o endereço de destino do link.</p>
+
+            <h4>Exemplo básico:</h4>
+
+            <code><pre>
+                &lt;a href="https://www.cursoemvideo.com">Visite o Curso em Vídeo&lt;/a&gt;
+            </pre></code>
+
+            <h3>Links Absolutos vs. Links Relativos</h3>
+
+            <p>Seus alunos precisam entender que existem duas formas de indicar o destino de um link no atributo href:</p>
+
+            <ol>
+                <li>Links Absolutos (Caminho Completo): São links que apontam para endereços externos (outros sites na internet). Eles devem sempre começar com o protocolo http:// ou https://.</li>
+                <code><pre>&lt;a href="https://developer.mozilla.org">Documentação da MDN&lt;/a&gt;</pre></code>
+                <li>Links Relativos (Caminho Interno): São links que apontam para outras páginas dentro do seu próprio site. Eles dependem da estrutura de pastas do seu computador ou servidor.</li>
+                <ul>
+                    <li>Se o arquivo contato.html estiver na mesma pasta que o index.html:</li>
+                    <code><pre>&lt;a href="contato.html">Fale Conosco&lt;/a&gt;</pre></code>
+                </ul>
+                <ul>
+                    <li>Se o arquivo estiver dentro de uma subpasta chamada paginas:</li>
+                    <code><pre>&lt;a href="paginas/sobre.html">Sobre o Site&lt;/a&gt;</pre></code>
+                </ul>
+            </ol>
+
+            <h3>Abrindo Links em Novas Abas (target="_blank")</h3>
+
+            <p>Por padrão, quando um usuário clica em um link, a nova página é carregada na mesma aba do navegador. Se você quiser que o link se abra em uma nova aba para que o usuário não saia do seu site, você deve adicionar o atributo target="_blank".</p>
+
+            <h3>⚠️ Alerta de Segurança Crítico: rel="noopener noreferrer"</h3>
+
+            <p>Quando abrimos um link em uma nova aba com target="_blank", criamos uma brecha de segurança nos bastidores. A nova página aberta ganha controle parcial sobre a aba anterior (sua página) através do JavaScript, podendo redirecionar o seu usuário para um site falso de vírus ou phishing sem que ele perceba (ataque conhecido como tabnabbing). Para evitar isso, sempre que usar target="_blank", você deve adicionar o atributo de segurança rel="noopener noreferrer":</p>
+
+            &lt;!-- Forma segura de abrir links em novas abas --&gt;
+            <code><pre>&lt;a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Pesquisar no Google&lt;/a&gt;</pre></code>
+
+            <p>Isso corta a conexão entre as duas abas, protegendo a integridade do seu site e a segurança do seu visitante.</p>
+
+            <h3>Boas Práticas de Acessibilidade (WCAG) e SEO</h3>
+
+            <p>Ensinar seus alunos a escreverem links acessíveis desde o começo evitará grandes erros no mercado de trabalho:</p>
+
+            <ul>
+                <li>Evite o "Clique Aqui" ou "Saiba Mais": Leitores de tela (softwares usados por pessoas com deficiência visual) costumam ler os links de uma página de forma isolada, fora de contexto. Ouvir apenas "clique aqui, clique aqui" não explica para onde o link aponta.</li>
+                <li>Seja descritivo: Em vez de escrever "Para ver nossos cursos [clique aqui]", escreva: "Conheça nossa [lista completa de cursos de HTML]".</li>
+                <li>SEO: Os motores de busca (como o Google) usam o texto visível do link (texto âncora) para entender o assunto da página de destino. Links descritivos ajudam seu site a ranquear muito melhor.</li>
+            </ul>
+
 
         </section>
 
